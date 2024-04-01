@@ -76,6 +76,6 @@ def index():
             session['known'] = True
         session['name'] = form.name.data
         return redirect(url_for('index'))
-    pessoas = User.query.all()  # Obtém todos os registros de usuário do banco de dados
+    pessoas = User.query.all()  
     return render_template('index.html', form=form, name=session.get('name'),
                            known=session.get('known', False), pessoas=pessoas)
